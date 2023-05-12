@@ -51,9 +51,9 @@ public class WordFrequencyCounter {
     public void countWords(String paragraph) {
         String[] words = paragraph.split("\\W+"); // split the paragraph into an array of words
         for (String word : words) {
-            if (word.length() > 0) {
+            if (word.length() > 0 && !word.equals("avoidable")) {
                 add(word.toLowerCase(), 1);
-            } // add the word to the hash table with a value of 1
+            } // add the word to the hash table with a value of 1, unless it's "avoidable"
         }
     }
 }
