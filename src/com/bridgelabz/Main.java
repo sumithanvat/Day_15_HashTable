@@ -3,15 +3,11 @@ package com.bridgelabz;
 public class Main {
     // the main method to test the class
     public static void main(String[] args) {
-        String sentence = "To be or not to be";
-        String[] words = sentence.split(" ");
-        WordFrequencyCounter counter = new WordFrequencyCounter(words.length);
-        for (String word : words) {
-            counter.add(word, 1);
-        }
-        System.out.println("Frequency of To is " + counter.getFrequency("To"));
-        System.out.println("Frequency of be is: " + counter.getFrequency("be"));
-        System.out.println("Frequency of or is: " + counter.getFrequency("or"));
-        System.out.println("Frequency of not is: " + counter.getFrequency("not"));
+        String paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+        WordFrequencyCounter counter = new WordFrequencyCounter(1000); // choose a size for the hash table array
+        counter.countWords(paragraph);
+        System.out.println("Frequency of paranoid : " + counter.getFrequency("paranoid"));
+        System.out.println("Frequency of are: " + counter.getFrequency("Are"));
+        System.out.println("frequency of situations: " + counter.getFrequency("situations"));
     }
 }
